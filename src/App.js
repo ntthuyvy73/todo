@@ -290,34 +290,24 @@ function App() {
                                     <DeleteOutlineOutlined />
                                 </IconButton>
 
-                                {/* incomplete btn */}
-                                {item.isComplete && (
-                                    <IconButton
-                                        title="Complete"
-                                        className="icon check-icon"
-                                        onClick={() =>
-                                            handleComplete(item.id, false)
-                                        }
-                                    >
-                                        <CloseOutlined />
-                                    </IconButton>
-                                )}
-                                {/* complete btn */}
-                                {!item.isComplete && (
-                                    <IconButton
-                                        title={
-                                            item.isComplete
-                                                ? "Incomplete"
-                                                : "Complete"
-                                        }
-                                        className="icon check-icon"
-                                        onClick={() =>
-                                            handleComplete(item.id, true)
-                                        }
-                                    >
-                                        <CheckOutlined />
-                                    </IconButton>
-                                )}
+                                {/* complete/incomplete btn */}
+                                <IconButton
+                                    title={
+                                        item.isComplete
+                                            ? "Incomplete"
+                                            : "Complete"
+                                    }
+                                    className="icon check-icon"
+                                    onClick={() =>
+                                        handleComplete(
+                                            item.id,
+                                            !item.isComplete
+                                        )
+                                    }
+                                >
+                                    {item.isComplete && <CloseOutlined />}
+                                    {!item.isComplete && <CheckOutlined />}
+                                </IconButton>
 
                                 <IconButton
                                     title="Edit"
