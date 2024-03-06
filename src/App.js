@@ -252,8 +252,9 @@ function App() {
                 )}
             </Formik>
 
-            {/* list */}
+            {/* end form */}
 
+            {/* list */}
             <Box marginTop={4}>
                 <h2>Todo list</h2>
 
@@ -279,6 +280,7 @@ function App() {
 
                         <div style={{ flex: "1" }}>
                             <div>
+                                {/* delete btn */}
                                 <IconButton
                                     title="Delete"
                                     className="icon"
@@ -309,6 +311,7 @@ function App() {
                                     {!item.isComplete && <CheckOutlined />}
                                 </IconButton>
 
+                                {/* edit btn */}
                                 <IconButton
                                     title="Edit"
                                     className="icon"
@@ -327,6 +330,7 @@ function App() {
                                 </IconButton>
                             </div>
 
+                            {/* detail  priority*/}
                             <div className="priority">
                                 {itemPriority &&
                                     item.id === itemPriority.id && (
@@ -377,10 +381,14 @@ function App() {
                                         </div>
                                     )}
                             </div>
+
+                            {/* end detail  priority*/}
+
                         </div>
                     </div>
                 ))}
             </Box>
+            {/* end list */}
         </Box>
     );
 }
