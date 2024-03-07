@@ -104,6 +104,7 @@ function App() {
     let arr = todos.filter((m) => m.id != id); //arr not have id
     const item = todos.filter((m) => m.id == id)[0]; //item of id
 
+    console.log(item);
     handleDelete(id);
 
     let data = {
@@ -113,6 +114,9 @@ function App() {
         ? date.toLocaleDateString() + " - " + date.toLocaleTimeString()
         : "",
     };
+
+    console.log(data);
+
     const newArr = [...arr, data];
     setTodos(newArr);
     setLocalStorage(newArr);
@@ -259,7 +263,7 @@ function App() {
                   label="Due date"
                   name="dueDate"
                   format="DD/MM/YYYY"
-                  value={values.dueDate}
+                  value={dayjs(values.dueDate)}
                   onChange={(val) => setFieldValue("dueDate", val)}
                 />
               </Grid>
